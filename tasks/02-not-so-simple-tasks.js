@@ -23,7 +23,7 @@
   *      { country: 'Russia',  city: 'Saint Petersburg' }
   */
 const sortCitiesArray = (arr) => {
-  throw new Error('Not implemented');
+  return arr.sort((a, b) => (a.country > b.country) ? 1 : (a.country === b.country) ? ((a.city > b.city) ? 1 : -1) : -1 );
 };
 
 /**
@@ -44,7 +44,8 @@ const sortCitiesArray = (arr) => {
  *   1678, 3  => 2000
  */
 const roundToPowerOfTen = (num, pow) => {
-  throw new Error('Not implemented');
+  const xPower = Math.pow(10, -pow);
+  return Math.round(num * xPower) / xPower
 };
 
 /**
