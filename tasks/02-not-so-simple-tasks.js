@@ -138,7 +138,7 @@ const timespanToHumanString = (startDate, endDate) => {
 };
 
 /**
- * Returns the rectagle object with width and height parameters and getArea() method
+ * Returns the rectangle object with width and height parameters and getArea() method
  *
  * @param {number} width
  * @param {number} height
@@ -153,7 +153,12 @@ const timespanToHumanString = (startDate, endDate) => {
 
 class Rectangle {
   constructor(width, height) {
-    throw new Error('Not implemented');
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea = () => {
+    return this.width * this.height;
   }
 }
 
@@ -169,7 +174,13 @@ class Rectangle {
  *   'entente' => null
  */
 const findFirstSingleChar = (str) => {
-  throw new Error('Not implemented');
+  for (let i = 0; i < str.length; i++) {
+    if (str.indexOf(str.charAt(i)) == str.lastIndexOf(str.charAt(i))) {
+      return str.charAt(i);
+      break;
+    }
+  }
+  return null;
 };
 
 /**
