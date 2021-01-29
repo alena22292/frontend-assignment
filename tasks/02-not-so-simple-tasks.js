@@ -61,7 +61,7 @@ const roundToPowerOfTen = (num, pow) => {
  *   34143 => 34143
  */
 const reverseInteger = (num) => {
-  throw new Error('Not implemented');
+  return parseInt(num.toString().split("").reverse().join(""));
 };
 
 /**
