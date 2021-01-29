@@ -204,7 +204,7 @@ const findFirstSingleChar = (str) => {
  *   'Pa55'.match(validator) => false
  */
 const getPasswordValidator = (minLength) => {
-  throw new Error('Not implemented');
+  return RegExp(`^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{${minLength},})`);
 };
 
 module.exports = {
