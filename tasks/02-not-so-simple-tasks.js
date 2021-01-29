@@ -96,7 +96,45 @@ const reverseInteger = (num) => {
  *
  */
 const timespanToHumanString = (startDate, endDate) => {
-  throw new Error('Not implemented');
+    // in seconds:
+    const diffSec = (endDate - startDate) / 1000;
+    const year = 345 * 60 * 60 * 24;
+    const yearAndHalf = 545 * 60 * 60 * 24;
+
+    if (diffSec > 0 && diffSec <= 45) {
+       // 0 to 45 seconds
+      return `${diffSec} seconds ago`;
+    } else if (diffSec > 45 && diffSec <= 90) {
+      // 45 to 90 seconds
+      return "a minute ago";
+    } else if (diffSec > 90 && diffSec <= 2700) {
+      // 90 seconds to 45 minutes
+      return `${Math.ceil(diffSec/60)} minutes ago`;
+    } else if (diffSec > 2700 && diffSec <= 5400) {
+      // 45 to 90 minutes
+      return "an hour ago";
+    } else if (diffSec > 5400 && diffSec <= 79200) {
+      // 90 minutes to 22 hours
+      return `${Math.ceil(diffSec/(60 * 60))} hours ago`;
+    } else if (diffSec > 79200 && diffSec <= 129600) {
+      // 22 to 36 hours
+      return "a day ago";
+    } else if (diffSec > 129600 && diffSec <= 2160000) {
+      // 36 hours to 25 days
+      return `${Math.ceil(diffSec/(60 * 60 * 24))} days ago`;
+    } else if (diffSec > 2160000 && diffSec <= 3888000) {
+      // 25 to 45 days
+      return "a month ago";
+    } else if (diffSec > 3888000 && diffSec <= year) {
+      // 45 to 345 days
+      `${Math.ceil(diffSec/(60 * 60 * 24 * 30))} months ago`;
+    } else if (diffSec > year && diffSec <= yearAndHalf) {
+      // 345 to 545 days (1.5 years)
+      return "a year ago";
+    } else {
+      // 546 days+
+      return `${Math.ceil(diffSec/(60 * 60 * 24 * 365))} years ago`;
+    }
 };
 
 /**
