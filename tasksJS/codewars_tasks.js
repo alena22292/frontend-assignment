@@ -21,3 +21,23 @@ function anagrams(word, words) {
 }
 // *******************************
 
+// 3) Find the difference between two arrays:
+
+function arrayDiff(a, b) {
+  return a.filter(n => !b.includes(n));
+}
+
+// arrayDiff([-5,-13,15,13,5,6,-3,-18,-1,6],[-1,5,13]);
+
+
+
+
+
+
+
+
+
+
+
+
+
