@@ -29,6 +29,19 @@ function arrayDiff(a, b) {
 
 // arrayDiff([-5,-13,15,13,5,6,-3,-18,-1,6],[-1,5,13]);
 
+// *******************************
+
+// Check the two strings if they have a common letter(s)
+function twoStrings(s1, s2) {
+  let common = s1.split('').filter(l => s2.split('').includes(l));
+  if (common.length >= 1) {
+      return 'YES';
+  } else {
+     return 'NO';
+  }
+}
+
+
 
 
 
