@@ -32,6 +32,8 @@ function arrayDiff(a, b) {
 // *******************************
 
 // Check the two strings if they have a common letter(s)
+// 4) Find the similar letters between two strings:
+
 function twoStrings(s1, s2) {
   let common = s1.split('').filter(l => s2.split('').includes(l));
   if (common.length >= 1) {
@@ -41,6 +43,7 @@ function twoStrings(s1, s2) {
   }
 }
 
+// *******************************
 
 
 
