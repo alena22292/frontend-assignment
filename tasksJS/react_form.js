@@ -11,32 +11,27 @@ class WishlistForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit = (e) => {
-    alert('The wish was sent');
+  handleSubmit(e) {
+    this.props.send(this.state);
     e.preventDefault();
   }
 
-  handleChange = (e) => {
-    this.setState({
-      priority: e.target.value,
-    })
-  }
-
   render() {
+    const {name, wish, priority} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-         <input id="name" type="text" placeholder="Your name" />
-         <textarea id="wish" placeholder="Describe your wish" />
-         <select value={this.state.priority} id="priority" onChange={this.handleChange}>
-           <option value='1'>1</option>
-           <option value='2'>2</option>
-           <option value='3'>3</option>
-           <option value='4'>4</option>
-           <option value='5'>5</option>
+         <input value={name} id="name" type="text" placeholder="Your name" onChange={() => this.setState({name: e.target.value})} />
+         <textarea value={wish} id="wish" placeholder="Describe your wish" onChange={() => this.setState({wish: e.target.value})} />
+         <select value={priority} id="priority" onChange={() => this.setState({priority: e.target.value})}>
+           <option selected value='1' />
+           <option value='2' />
+           <option value='3' />
+           <option value='4' />
+           <option value='5' />
          </select>
+         <input type="submit" value="Submit" />
       </form>
     );
   }
@@ -47,3 +42,5 @@ class WishlistForm extends React.Component {
 // a text area to describe the wish (id: 'wish')
 // a drop-down indicating the priority of the wish, from 1 to 5 - default is 1 (id: 'priority')
 // the keys in the state to store the corresponding values should be named the same as the element's id
+// an onSubmit action calling the function handleSubmit
+// it should be a controlled component (i.e. using onChange to bind input to the component's state)
