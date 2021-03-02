@@ -63,6 +63,11 @@ snail = function(array) {
   for(let j=array.length-1; j >= 0; j--) {
     result.push(array[j].shift());
   }
+  //the recursive function strips the outer edges off the input array,
+  // spreads them into the output, and then spreads the result of being run
+  // on the remaining input into the output. Each run of the function
+  // (until it hits a base case) is analogous to a pass of the while loop
+  // in the iterative solution.
   result.push(...snail(array))
   return result;
 }
