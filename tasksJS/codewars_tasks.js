@@ -47,20 +47,24 @@ function twoStrings(s1, s2) {
 
 // 5) Snail
 snail = function(array) {
+  if (array.length < 2) {
+    return array[0] || [];
+  }
   let result = [];
-  // push the first line of snail way;
-  result.push(array[0]);
-  // push the last element of second line;
-  const midLast = array[1][array.length - 1];
-  result.push(midLast);
-  // sort the third line;
-  const lastLine = array[2].sort((a,b) => b-a);
-  result.push(lastLine);
-  // the rest of items from second line:
-  const rest = array[1].slice(0, -1);
-  result.push(rest);
-
-  return result.flatMap(i => i);
+  // add the first sub-array into a result array:
+  result.push(...array.shift());
+  // add the last items of the midlle sub-arrays:
+  for(let i=0; i < array.length-1; i++) {
+    result.push(array[i].pop());
+  }
+  // reverse the last sub-array(array.pop or in some case it could be []) one:
+  result.push(...array.pop().reverse());
+  //
+  for(let j=array.length-1; j >= 0; j--) {
+    result.push(array[j].shift());
+  }
+  result.push(...snail(array))
+  return result;
 }
 // output =>
 array = [[1,2,3],
