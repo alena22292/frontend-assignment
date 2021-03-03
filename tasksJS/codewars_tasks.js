@@ -97,6 +97,22 @@ function rgb(r, g, b){
 
 // => rgb(300,255,255), 'FFFFFF'
 
+// 7) In this exercise, you have to analyze records of temperature to find the closest to zero.
+
+function computeClosestToZero(ts) {
+    if (ts.length < 1) {
+      return 0;
+    }
+    let minus = ts.filter(m => m < 0).sort((a,b) => b - a);
+    let plus = ts.filter(p => p >= 0).sort((a,b) => a - b);
+    if (Math.abs(minus[0]) >=  Math.abs(plus[0])) {
+      return plus[0];
+    } else {
+      return minus[0];
+    }
+}
+
+
 
 
 
