@@ -105,12 +105,33 @@ function computeClosestToZero(ts) {
     }
     let minus = ts.filter(m => m < 0).sort((a,b) => b - a);
     let plus = ts.filter(p => p >= 0).sort((a,b) => a - b);
-    if (Math.abs(minus[0]) >=  Math.abs(plus[0])) {
+    // condition if there is only array of positive numbers:
+    if (minus.length === 0){
       return plus[0];
+    } else if (plus.length === 0){
+      return minus[0]
     } else {
-      return minus[0];
+        if (Math.abs(minus[0]) >=  Math.abs(plus[0])) {
+        return plus[0];
+      } else {
+        return minus[0];
+      }
     }
+
 }
+
+// 8) How to chech if it is an array or other type of object:
+  const arrayList = ['Hello', 'Alena'];
+  const object = {name: 'Alena', surname: 'Gritsiuk'};
+
+  if(Object.prototype.toString.call(arrayList) === '[object Array]') {
+    console.log('Array!');
+  }
+  if(Object.prototype.toString.call(arrayList) === '[object Object]') {
+    console.log('Object!');
+  }
+
+  // if use 'typeof' arrayList => 'object' as well as for {Object}
 
 
 
