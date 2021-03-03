@@ -133,6 +133,23 @@ function computeClosestToZero(ts) {
 
   // if use 'typeof' arrayList => 'object' as well as for {Object}
 
+// 9) How would you use a closure to create a private counter?
+
+function counter() {
+  let accumulator = 0;
+  return {
+    add: function(num) { accumulator += num; },
+    retrieve: function() { return 'The counter is currently at: ' + accumulator; }
+  }
+}
+
+const myFunction = counter();
+myFunction.add(34);
+myFunction.add(67);
+myFunction.retrieve();
+
+// => "The counter is currently at: 101"
+
 
 
 
