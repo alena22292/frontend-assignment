@@ -77,7 +77,25 @@ array = [[1,2,3],
          [7,8,9]]
 snail(array) #=> [1,2,3,6,9,8,7,4,5]
 
+// 6) The rgb function is incomplete.
+// Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
 
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+function rgb(r, g, b){
+  return [r, g, b].map(x => {
+    if (x > 255) {
+      x = 255;
+    }
+    if (x < 0) {
+      x = 0;
+    }
+    let hex = x.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+  }).join('').toUpperCase();
+}
+
+// => rgb(300,255,255), 'FFFFFF'
 
 
 
