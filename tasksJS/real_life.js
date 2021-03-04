@@ -14,6 +14,15 @@ function smallestInterval(array){
 // return: either Standart, Rejected, Special
 //
 // (used a condition &&)
+function value(weight, height, length, mass){
+  if (){
+
+  }else if(){
+
+  }else{
+
+  }
+}
 
 // 3) Find the approximation of pi/4. Given array of points[[3, 6],[2, 4]]
 
