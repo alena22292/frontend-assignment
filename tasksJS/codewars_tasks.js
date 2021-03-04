@@ -245,8 +245,30 @@ function sockMerchant(n, ar) {
   return count;
 }
 
+//13
+function countingValleys(steps, path) {
+    let valley = 0;
+    let isItValley = false;
 
+    path = path.split('').map(st => st === 'U' ? 1 : -1);
+    let count = 0;
+    for (let i in path) {
+        count += path[i];
+        if (count < 0 && !isItValley) {
+           isItValley = true;
+        }
+        if (count == 0 && isItValley){
+            valley++;
+            isItValley = false;
+        }
+    }
+    return valley;
+}
 
+// Example
+// n = 8
+// s = "UDDDUDUU"
+// => 1
 
 
 
