@@ -222,6 +222,30 @@ function permutations(string) {
   return result;
 }
 
+// 12
+function sockMerchant(n, ar) {
+  let obj = {};
+  for(let i = 0; i < n; i++){
+    if (obj[ar[i]]) {
+      obj[ar[i]] += 1;
+    } else {
+      obj[ar[i]] = 1;
+    }
+  }
+
+  // => {10: 4, 20: 3, 30: 1, 50: 1}
+  let myArray = Object.entries(obj).filter(arr => arr[1] >= 2);
+  let count = 0;
+
+  for (let i = 0; i < myArray.length; i++){
+    let item = myArray[i];
+    count += Math.floor(item[1] / 2);
+  }
+
+  return count;
+}
+
+
 
 
 
