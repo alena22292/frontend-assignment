@@ -18,7 +18,7 @@ function smallestInterval(array){
 // 3) Find the approximation of pi/4. Given array of points[[3, 6],[2, 4]]
 
 // 4) Given an object. Need to retrieve an array of strings 'Hello-obj[key'
-function sayHhello(object) {
+function sayHello(object) {
   let result = [];
   let objArray = Object.entries(object);
   for (let ar of objArray) {
