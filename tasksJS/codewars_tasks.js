@@ -208,6 +208,8 @@ function permutations(string) {
 
   for (let i = 0; i < string.length; i++) {
     let char = string[i];
+    // this condition allows you to avoid all repeats of the word,
+    // alternatively you may use [...new Set(result)]
     if (string.indexOf(char) != i) {
       continue
     }
