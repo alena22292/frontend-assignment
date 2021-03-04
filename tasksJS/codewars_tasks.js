@@ -196,6 +196,29 @@ return 'No such contact';
 
 // => lookUpProfile("Akira", "likes");
 
+// 11)
+function permutations(string) {
+  if (!string || typeof string !== 'string'){
+    return 'Please enter the string';
+  } else if (string.length < 2) {
+    return [string];
+  }
+
+  let result = [];
+
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
+    if (string.indexOf(char) != i) {
+      continue
+    }
+    let remainLetters = string.slice(0, i) + string.slice(i + 1, string.length);
+    for (let perm of permutations(remainLetters)) {
+      result.push(char + perm);
+    }
+  }
+  // return only uniqe values of words:
+  return result;
+}
 
 
 
