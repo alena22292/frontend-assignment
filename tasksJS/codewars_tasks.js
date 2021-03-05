@@ -270,6 +270,22 @@ function countingValleys(steps, path) {
 // s = "UDDDUDUU"
 // => 1
 
+// 14) moves zeros to the end of the array.
+var moveZeros = function (arr) {
+  // TODO: Program me
+  let zero = [];
+  let rest = [];
+  for (let item of arr) {
+    item === 0 ? zero.push(item) : rest.push(item);
+  }
+  for (let z of zero) {
+    rest.push(z);
+  }
+  return rest;
+}
+
+// => moveZeros([1,2,0,1,0,1,0,3,0,1] ==> [ 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 ]
+
 
 
 
