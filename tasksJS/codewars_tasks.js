@@ -286,6 +286,16 @@ var moveZeros = function (arr) {
 
 // => moveZeros([1,2,0,1,0,1,0,3,0,1] ==> [ 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 ]
 
+// 15) Remove all charecters that unwanted in the given string:
+function solution(input, markers) {
+  let res = input.replace(markers[0], '');
+
+  for (let j=1; j<markers.length; j++){
+    res = res.replace(markers[j], '');
+  }
+
+  return res.trim();
+};
 
 
 
