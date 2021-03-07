@@ -335,7 +335,7 @@ function formatDuration(seconds) {
     if (minFunct().charAt(0) === 'a') {
       return (hour ? hour + ' hour' + (hour === 1 ? ' ' : 's ') : '');
     }
-    if (sec === 0 && min === 0) {
+    if (sec === 0 || min === 0) {
       return (hour ? hour + ' hour' + (hour === 1 ? '' : 's') : '');
     }
     return (hour ? hour + ' hour' + (hour === 1 ? ', ' : 's, ') : '');
