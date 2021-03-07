@@ -320,9 +320,51 @@ function formatDuration(seconds) {
   let min = Math.floor((((seconds % (dayInSec * 365)) % dayInSec) % 3600) / 60);
   let sec = (((seconds % (dayInSec * 365)) % dayInSec) % 3600) % 60;
 
+  secFunct = () => {
+    return (sec ? (((seconds > 60) ? 'and ' + sec + ' second' : + sec + ' second') + (sec === 1 ? '' : 's')) : '');
+  };
 
+  minFunct = () => {
+    if (sec === 0 && day !== 0) {
+      return 'and ' + (min ? min + 'minute' + (min === 1 ? '' : 's') : '');
+    }
+    return (num ? num + ' minute' + (min === 1 ? '': 's') : '');
+  };
 
+  hoursFunct = () => {
+    if (minFunct().charAt(0) === 'a') {
+      return (hour ? hour + ' hour' + (hour === 1 ? ' ' : 's ') : '');
+    }
+    if (sec === 0 && min === 0) {
+      return (hour ? hour + ' hour' + (hour === 1 ? '' : 's') : '');
+    }
+    return (hour ? hour + ' hour' + (hour === 1 ? ', ' : 's, ') : '');
+  };
+
+  daysFunct = () => {
+    return (day ? day + ' day' + (day === 1 ? ', ' : 's, ') : '');
+  };
+
+  yearsFunct = () => {
+    return (year ? year + ' year' + (year === 1 ', ' : 's, ') : '');
+  }
+  return yearsFunct() + daysFunct() + hoursFunct() + minFunct() + secFunct();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
