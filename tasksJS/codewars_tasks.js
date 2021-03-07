@@ -307,6 +307,24 @@ function solution(input, markers)
 //           grapes
 //           bananas"
 
+// 16
+
+function formatDuration(seconds) {
+  // Complete this function
+
+  let dayInSec = 24 * 3600;
+
+  let year = Math.floor(seconds/(dayInSec * 365));
+  let day = Math.floor((seconds % (dayInSec * 365)) / dayInSec);
+  let hour = Math.floor(((seconds % (dayInSec * 365)) % dayInSec) / 3600);
+  let min = Math.floor((((seconds % (dayInSec * 365)) % dayInSec) % 3600) / 60);
+  let sec = (((seconds % (dayInSec * 365)) % dayInSec) % 3600) % 60;
+
+
+
+}
+
+
 
 
 
