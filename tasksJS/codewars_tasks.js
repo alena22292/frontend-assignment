@@ -286,7 +286,7 @@ var moveZeros = function (arr) {
 
 // => moveZeros([1,2,0,1,0,1,0,3,0,1] ==> [ 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 ]
 
-// 15) Remove all charecters that unwanted in the given string:
+// 15) Complete the solution so that it strips all text that follows any of a set of comment markers passed in. Any whitespace at the end of the line should also be stripped out. Remove all charecters that unwanted in the given string:
 function solution(input, markers) {
   // mapping array on each line =>
   return input.split('\n').map(line => markers.reduce((line, marker) => line.split(marker)[0].trim(), line)).join('\n');
