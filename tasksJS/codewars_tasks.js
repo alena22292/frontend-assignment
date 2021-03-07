@@ -288,17 +288,15 @@ var moveZeros = function (arr) {
 
 // 15) Remove all charecters that unwanted in the given string:
 function solution(input, markers) {
-  let res = input.replace(markers[0], '');
-
-  for (let j=1; j<markers.length; j++){
-    res = res.replace(markers[j], '');
-  }
-
-  return res.trim();
+  // mapping array on each line =>
+  return input.split('\n').map(line => markers.reduce((line, marker) => line.split(marker)[0].trim(), line)).join('\n');
 };
 
+// => solution("apples, pears # and bananas\ngrapes\nbananas !apples!, adrians ^ ", ["#", "!", "^"])
 
-
+// output => "apples, pears
+//           grapes
+//           bananas"
 
 
 
