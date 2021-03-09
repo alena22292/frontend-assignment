@@ -2,7 +2,7 @@
 // The cells of the sudoku board may also contain 0's, which will represent empty cells. Boards containing one or more zeroes are considered to be invalid solutions.
 
 
-function sudokuValidation(board) {
+function validSolution(board) {
   let obj = {
     row: {},
     column: {},
@@ -44,13 +44,13 @@ function sudokuValidation(board) {
           // valid grid
           const block = getBlockNumber(r,c);
           if(!obj.blocks.hasOwnProperty(block)){
-            obj.blocks[b] = {};
+            obj.blocks[block] = {};
           };
-          if (obj.blocks[b].hasOwnProperty(cellValue)){
+          if (obj.blocks[block].hasOwnProperty(cellValue)){
             isValid = false;
             break loop1;
           } else {
-            obj.blocks[b][cellValue] = null;
+            obj.blocks[block][cellValue] = null;
           }
         }
     }
@@ -77,14 +77,6 @@ const getBlockNumber = (row, column) => {
 
     return blockNumber;
 };
-
-
-
-
-
-
-
-
 
 //  Example:
 
