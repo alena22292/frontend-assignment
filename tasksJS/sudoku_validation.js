@@ -9,17 +9,75 @@ function sudokuValidation(board) {
     blocks: {},
   }
 
-  let isValid = false;
+  let isValid = true;
 
   loop1:
     for (let r=0; r<board.length; r++){
       loop2:
         for (let c=0; c<board[r].length; c++){
+          const cellValue = board[r][c];
 
+          if (cellValue === 0) {
+             isValid = false;
+             break loop1;
+          };
+          // validate rows:
+          if (!obj.row.hasOwnProperty(r)){
+            obj.row[r] = {};
+          };
+          if (obj.row[r].hasOwnProperty(cellValue)){
+            isValid=false;
+            break loop1;
+          } else {
+            obj.row[r][cellValue] = null;
+          };
+          // validate columns:
+          if (!obj.column.hasOwnProperty(c)){
+            obj.column[c] = {};
+          };
+          if (obj.column[c].hasOwnProperty(cellValue)){
+            isValid=false;
+            break loop1;
+          } else {
+            obj.column[c][cellValue] = null;
+          };
+          // valid grid
+          const block = getBlockNumber(r,c);
+          if(!obj.blocks.hasOwnProperty(block)){
+            obj.blocks[b] = {};
+          };
+          if (obj.blocks[b].hasOwnProperty(cellValue)){
+            isValid = false;
+            break loop1;
+          } else {
+            obj.blocks[b][cellValue] = null;
+          }
         }
-
     }
-}
+    return isValid;
+};
+
+const getBlockNumber = (row, column) => {
+    const rowQuotient = parseInt(row / 3, 10);
+    const columnQuotient = parseInt(column / 3, 10);
+
+    let blockNumber;
+
+    switch(`${rowQuotient}${columnQuotient}`) {
+        case '00': blockNumber = 0; break;
+        case '01': blockNumber = 1; break;
+        case '02': blockNumber = 2; break;
+        case '10': blockNumber = 3; break;
+        case '11': blockNumber = 4; break;
+        case '12': blockNumber = 5; break;
+        case '20': blockNumber = 6; break;
+        case '21': blockNumber = 7; break;
+        case '22': blockNumber = 8; break;
+    };
+
+    return blockNumber;
+};
+
 
 
 
