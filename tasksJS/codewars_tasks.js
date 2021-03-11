@@ -307,7 +307,7 @@ function solution(input, markers)
 //           grapes
 //           bananas"
 
-// 16
+// 16 Human readable time form
 
 function formatDuration(seconds) {
   // Complete this function
