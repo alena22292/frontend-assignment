@@ -351,6 +351,27 @@ function formatDuration(seconds) {
   return yearsFunct() + daysFunct() + hoursFunct() + minFunct() + secFunct();
 }
 
+// 17 Repeated string, s = a fraction of an infinitive string, n = the size of the substring.
+//   The task is to find how many times 'a' repeats in the substring.
+function repeatedString(s, n) {
+  // need to check up if the given string is a string:
+  if (typeof s !== 'string' || s.length < 1) {
+    return 'Please provide a string';
+  }
+  if (s.length < 2) {
+    return n;
+  }
+
+  let arr = [];
+  // to make from a string an array of given number;
+
+
+  return arr.slice(0, n+1)filter(i => i === 'a').length;
+}
+
+repeatedString('aba', 10)
+
+
 
 
 
