@@ -362,11 +362,13 @@ function repeatedString(s, n) {
     return n;
   }
 
-  let arr = [];
+  let str = '';
   // to make from a string an array of given number;
+  for (let i = 0; i < n; i++) {
+    str += s;
+  }
 
-
-  return arr.slice(0, n+1)filter(i => i === 'a').length;
+  return str.split('').slice(0, n).filter(i => i === 'a').length;
 }
 
 repeatedString('aba', 10)
