@@ -360,14 +360,12 @@ function repeatedString(s, n) {
   }
   if (s.length < 2) {
     return n;
-  }
-
+  };
   let str = '';
   // to make from a string an array of given number;
   for (let i = 0; i < n; i++) {
     str += s;
   }
-
   return str.split('').slice(0, n).filter(i => i === 'a').length;
 }
 
