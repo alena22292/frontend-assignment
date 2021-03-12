@@ -374,22 +374,24 @@ repeatedString('aba', 10)
 // Build a Calculator
 const Calculator = function() {
   this.evaluate = string => {
+    // rid of spaces between characters in the string;
+    string = string.split(' ').join('');
     // need to check if there is '()', '/', '*' - the first math action
-    while (string.includes('*')) {
-      let num1 = Number(string[string.indexOf('*') - 2]);
-      let num2 = Number(string[string.indexOf('*') + 2]);
-      let result = num1 * num2;
-      string = string.slice(0, string.indexOf('*') - 2) + result.toString() + string.slice(string.indexOf('*') + 3, string.length);
+    if (string.length > 1) {
+      while (string.includes('*')) {
+        let num1 = Number(string[string.indexOf('*') - 2]);
+        let num2 = Number(string[string.indexOf('*') + 2]);
+        let result = num1 * num2;
+        string = string.slice(0, string.indexOf('*') - 2) + result.toString() + string.slice(string.indexOf('*') + 3, string.length);
+      }
+      while (string.includes('/')) {
+        let num1 = Number(string[string.indexOf('/') - 2]);
+        let num2 = Number(string[string.indexOf('/') + 2]);
+        let result = num1 / num2;
+        string = string.slice(0, string.indexOf('/') - 2) + result.toString() + string.slice(string.indexOf('/') + 3, string.length);
+      }
     }
-    while (string.includes('/')) {
-      let num1 = Number(string[string.indexOf('/') - 2]);
-      let num2 = Number(string[string.indexOf('/') + 2]);
-      let result = num1 / num2;
-      string = string.slice(0, string.indexOf('/') - 2) + result.toString() + string.slice(string.indexOf('/') + 3, string.length);
-    }
-
-    return result;
-
+    return string;
   }
 };
 // alternative:
