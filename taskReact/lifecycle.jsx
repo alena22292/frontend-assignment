@@ -10,4 +10,25 @@ There are a few of them:
   componentWillUnmount    -
 */
 
+import React, { Component } from 'react';
+
+class React extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      status: 0,
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.status}
+      </div>
+    );
+  }
+}
+
+export default React;
 
