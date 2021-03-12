@@ -378,17 +378,30 @@ const Calculator = function() {
     string = string.split(' ').join('');
     // need to check if there is '()', '/', '*' - the first math action
     if (string.length > 1) {
+      // how to make the math from left to right??? => if (string[1] === '*' or '/')
       while (string.includes('*')) {
-        let num1 = Number(string[string.indexOf('*') - 2]);
-        let num2 = Number(string[string.indexOf('*') + 2]);
+        let num1 = Number(string[string.indexOf('*') - 1]); // -1 index works only with numbers from 1 to 9!!! instead of string use an array!
+        let num2 = Number(string[string.indexOf('*') + 1]);
         let result = num1 * num2;
-        string = string.slice(0, string.indexOf('*') - 2) + result.toString() + string.slice(string.indexOf('*') + 3, string.length);
+        string = string.slice(0, string.indexOf('*') - 1) + result.toString() + string.slice(string.indexOf('*') + 2, string.length);
       }
       while (string.includes('/')) {
-        let num1 = Number(string[string.indexOf('/') - 2]);
-        let num2 = Number(string[string.indexOf('/') + 2]);
+        let num1 = Number(string[string.indexOf('/') - 1]);
+        let num2 = Number(string[string.indexOf('/') + 1]);
         let result = num1 / num2;
-        string = string.slice(0, string.indexOf('/') - 2) + result.toString() + string.slice(string.indexOf('/') + 3, string.length);
+        string = string.slice(0, string.indexOf('/') - 1) + result.toString() + string.slice(string.indexOf('/') + 2, string.length);
+      }
+      while (string.includes('-')) {
+        let num1 = Number(string[string.indexOf('-') - 1]);
+        let num2 = Number(string[string.indexOf('-') + 1]);
+        let result = num1 - num2;
+        string = string.slice(0, string.indexOf('-') - 1) + result.toString() + string.slice(string.indexOf('-') + 2, string.length);
+      }
+      while (string.includes('+')) {
+        let num1 = Number(string[string.indexOf('+') - 1]);
+        let num2 = Number(string[string.indexOf('+') + 1]);
+        let result = num1 + num2;
+        string = string.slice(0, string.indexOf('+') - 1) + result.toString() + string.slice(string.indexOf('+') + 2, string.length);
       }
     }
     return string;
