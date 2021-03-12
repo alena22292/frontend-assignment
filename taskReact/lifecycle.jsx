@@ -17,9 +17,20 @@ class React extends Component {
     super(props);
 
     this.state = {
+      age: props.initialAge,
       status: 0,
+      homeLink: props.initialLinkName,
     }
+
+    setTimeout(() => {
+      this.setState({
+        status: 1,
+      })
+    }, 3000);
+    console.log('Constructor');
   }
+
+
 
   render() {
     return (
