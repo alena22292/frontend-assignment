@@ -17,9 +17,8 @@ class React extends Component {
     super(props);
 
     this.state = {
-      age: props.initialAge,
+      age: 28,
       status: 0,
-      homeLink: props.initialLinkName,
     }
 
     setTimeout(() => {
@@ -30,7 +29,40 @@ class React extends Component {
     console.log('Constructor');
   }
 
+  componentWillMount(){
+    console.log('Component will mount');
+  }
 
+  componentDidMount(){
+    console.log('Component did mount');
+  }
+
+  componentWillReceiveProps(nextProps){
+     console.log('Component will receive props', nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('Should component update', nextProps, nextstate);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('Componet will update', nextProps, nextState);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component did update', prevProps, prevState);
+  }
+
+  componentWillUnmount(){
+    console.log('Component will unmount')
+  }
+
+  onMakeOlder(){
+    this.setState({
+      age: this.state.age + 3,
+    });
+  }
 
   render() {
     return (
