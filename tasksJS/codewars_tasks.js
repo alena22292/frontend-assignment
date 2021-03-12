@@ -375,17 +375,30 @@ repeatedString('aba', 10)
 const Calculator = function() {
   this.evaluate = string => {
     // need to check if there is '()', '/', '*' - the first math action
-    let result;
-    if (string.includes('*')) {
-      let num1 = string[string.indexOf('*') - 2];
-      let num2 = string[string.indexOf('*') + 2];
-      result = num1 * num2;
-      string = string.slice(0, string.indexOf('*') - 2) + string.slice(string.indexOf('*') + 2, string.length);
+    while (string.includes('*')) {
+      let num1 = Number(string[string.indexOf('*') - 2]);
+      let num2 = Number(string[string.indexOf('*') + 2]);
+      let result = num1 * num2;
+      string = string.slice(0, string.indexOf('*') - 2) + result.toString() + string.slice(string.indexOf('*') + 3, string.length);
     }
+    while (string.includes('/')) {
+      let num1 = Number(string[string.indexOf('/') - 2]);
+      let num2 = Number(string[string.indexOf('/') + 2]);
+      let result = num1 / num2;
+      string = string.slice(0, string.indexOf('/') - 2) + result.toString() + string.slice(string.indexOf('/') + 3, string.length);
+    }
+
     return result;
+
   }
 };
+// alternative:
+const Calculator = function() {
+  this.evaluate = string => {
 
+
+  }
+};
 
 
 
