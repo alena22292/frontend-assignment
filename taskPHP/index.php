@@ -54,7 +54,32 @@
       /*
       output => array(2) { [0]=> string(6) "string" [1]=> int(34) };
       */
-      
+
+      // Useful methods to check up the variable type:
+        echo is_string($string);
+        /* 
+        is_bool();
+        is_int();
+        is_double;
+        */
+
+        // Check if the var is defined:
+        echo isset($hot);
+
+        // Constants: (name, value)
+        define('PI', 3.141592);
+        echo '<p>'.PI.'<p>';
+
+        // Build-in PHP constants:
+        echo SORT_ASC; // sort a number in ascending order;
+        echo PHP_INT_MAX;
+
+        // Increment operator:
+        $a = 5;
+
+        echo $a++; // print $a => 5; then increased the value $a = 6;
+        echo ++$a;  // firstly $a+1 then printed out => 7;
+        
     ?>
     <script src="/bundle.js"></script>
   </body>
