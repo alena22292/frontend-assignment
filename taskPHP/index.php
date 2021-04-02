@@ -80,6 +80,9 @@
         echo $a++; // print $a => 5; then increased the value $a = 6;
         echo ++$a;  // firstly $a+1 then printed out => 7;
         
+        // Run into server:
+        // => php -S localhost:4000
+        // On the web-page: http://localhost:4000/php-project/index.php
     ?>
     <script src="/bundle.js"></script>
   </body>
