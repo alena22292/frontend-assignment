@@ -66,7 +66,17 @@
         */
         // string methods: 
         $myString = "Hello World";
+
         strtolower($myString);
+        strtoupper();
+        strlen();
+        // to retrieve the first character of the string:
+        $myString[0];
+        str_replace("World", "Home", $myString);
+
+
+
+
         // Check if the var is defined:
         echo isset($hot);
 
