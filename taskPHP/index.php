@@ -75,7 +75,7 @@
         str_replace("World", "Home", $myString);
         // substring method takes at least two arguments var string, start position and the third one is optional as you want to retrieve specific number of characters 
         substr($myString, 8, 4);
-
+      
 
         // num methods: 
         pow(2, 4);
@@ -86,9 +86,6 @@
         round();
         ceil();
         floor();
-
-      
-
 
         // Check if the var is defined:
         echo isset($hot);
@@ -110,7 +107,16 @@
         // Run into server:
         // => php -S localhost:4000
         // On the web-page: http://localhost:4000/php-project/index.php
+
+        // plain html tags: retrieve the input from the form(inside the square brackets puts the value of name):
+
+        $_GET["name"];
+        
     ?>
+    <form method="get" action="index.php">
+        <label id="name">Name: </labe>
+        <input type="text" name="name">
+    </form>
     <script src="/bundle.js"></script>
   </body>
 </html>
