@@ -113,13 +113,28 @@
         $_GET["name"];
         
     ?>
+    <!-- GET -->
     <form method="get" action="index.php">
         <label id="name">Name: </labe>
         <input type="text" name="name">
         <label id="age">Age: </labe>
         <input type="text" name="age">
     </form>
-    <p>Hello<?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
+    <!-- POST -->
+    <form method="post" action="index.php">
+        <label id="name">Password: </labe>
+        <input type="text" name="password">
+    </form>
+    <!-- CHECKBOX -->
+    <form action="index.php" method="post">
+      Apples: <input type="checkbox" name="fruits[]" value="apples">
+      Banana: <input type="checkbox" name="fruits[]" value="banana">
+      Oranges: <input type="checkbox" name="fruits[]" value="oranges">
+      <input type="submit">
+    </form>
+
+    <!-- with a post method you can't see your inputs in URL line -->
+    <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
     <script src="/bundle.js"></script>
   </body>
 </html>
