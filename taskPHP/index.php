@@ -116,7 +116,10 @@
     <form method="get" action="index.php">
         <label id="name">Name: </labe>
         <input type="text" name="name">
+        <label id="age">Age: </labe>
+        <input type="text" name="age">
     </form>
+    <p>Hello<?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
     <script src="/bundle.js"></script>
   </body>
 </html>
