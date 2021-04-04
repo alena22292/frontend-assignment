@@ -64,7 +64,9 @@
         is_int();
         is_double;
         */
-
+        // string methods: 
+        $myString = "Hello World";
+        strtolower($myString);
         // Check if the var is defined:
         echo isset($hot);
 
