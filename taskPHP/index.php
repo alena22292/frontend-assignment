@@ -73,8 +73,21 @@
         // to retrieve the first character of the string:
         $myString[0];
         str_replace("World", "Home", $myString);
+        // substring method takes at least two arguments var string, start position and the third one is optional as you want to retrieve specific number of characters 
+        substr($myString, 8, 4);
 
 
+        // num methods: 
+        pow(2, 4);
+        sqrt(144);
+        abs();
+        max();
+        min();
+        round();
+        ceil();
+        floor();
+
+      
 
 
         // Check if the var is defined:
