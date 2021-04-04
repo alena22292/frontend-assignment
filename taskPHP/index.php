@@ -112,6 +112,13 @@
 
         $_GET["name"];
         
+
+        // Associative array (pair of key and values):
+        $grades = array("Alena" => "A+", "Next" => "B");
+        
+        // methods: 
+        count($grades); 
+
     ?>
     <!-- GET -->
     <form method="get" action="index.php">
@@ -132,6 +139,25 @@
       Oranges: <input type="checkbox" name="fruits[]" value="oranges">
       <input type="submit">
     </form>
+    <!-- Associative array -->
+    
+    <form action="index.php" method="post">
+      Student name: <input type="text" name="student-name">
+      <input type="submit">
+    </form>
+
+    <?php 
+      $grades = array("Jim" => "B", "Lucas" => "D");
+      $name = $_POST["student-name"];
+
+       echo "<p>$name has the grade $grades[$name]</p>" 
+      ?>
+    <!-- Functions: -->
+    <?php 
+      function sayHello($name) {
+        echo "<div>Hello, $name</div>"
+      }
+    ?>
 
     <!-- with a post method you can't see your inputs in URL line -->
     <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
