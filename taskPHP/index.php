@@ -31,7 +31,9 @@
       // Variables
       $name = 'Alena';
       $surname = 'Gr';
+      $age = 28;
       echo $name . ' ' . $surname;
+      echo "Age is $age <br>";
       echo '<br>';
       
       // Variable types:
