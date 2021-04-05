@@ -155,10 +155,20 @@
     <!-- Functions: -->
     <?php 
       function sayHello($name) {
-        echo "<div>Hello, $name</div>"
+        echo "<div>Hello, $name</div>";
+      }
+
+      sayHello("Alena");
+    ?>
+    <!-- Looping -->
+    <?php 
+      $myArray = array("green", "pink", "yellow");
+      for($i = 0; $i <= count($myArray); $i++) {
+        echo "$myArray[$i] <br>";
       }
     ?>
-
+    <!-- To add another HTML files into the file -->
+    <?php include "path/to/file" ?>
     <!-- with a post method you can't see your inputs in URL line -->
     <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
     <script src="/bundle.js"></script>
