@@ -160,6 +160,7 @@
 
       sayHello("Alena");
     ?>
+
     <!-- Looping -->
     <?php 
       $myArray = array("green", "pink", "yellow");
@@ -167,10 +168,33 @@
         echo "$myArray[$i] <br>";
       }
     ?>
+
+    <!-- IF condition -->
+    <!-- Classes and objects -->
+    <?php
+      class Book {
+        var $title;
+        var $author;
+        var $pages;
+
+        function __construct($aTitle, $aAuthor, $aPages){
+          $this->title = $aTitle;
+          $this->author = $aAuthor;
+          $this->pages = $aPages;
+        }
+      }
+
+      $book1 = new Book('Harry Potter', 'JK Rowling', 400);
+    ?>
+
     <!-- To add another HTML files into the file -->
     <?php include "path/to/file" ?>
+    <!-- It is possible to include another .php file with names of some variables in it and assigned them in the main file. -->
+
     <!-- with a post method you can't see your inputs in URL line -->
     <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
+    
+
     <script src="/bundle.js"></script>
   </body>
 </html>
