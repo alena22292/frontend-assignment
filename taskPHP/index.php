@@ -182,9 +182,18 @@
           $this->author = $aAuthor;
           $this->pages = $aPages;
         }
+
+        function isSmall(){
+          if ($this->pages <= 400){
+            echo "This is a small book";
+          } else {
+            echo "This is a big book";
+          } 
+        }
       }
 
       $book1 = new Book('Harry Potter', 'JK Rowling', 400);
+      $book2 = new Book('Onegin', 'Alexander Pushkin', 700);
     ?>
 
     <!-- To add another HTML files into the file -->
