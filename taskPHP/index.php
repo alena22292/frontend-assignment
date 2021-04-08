@@ -173,8 +173,9 @@
     <!-- Classes and objects -->
     <?php
       class Book {
-        var $title;
-        var $author;
+        // visibility modifiers: public(changeble) and private(unmutable)
+        public $title;
+        private $author;
         var $pages;
 
         function __construct($aTitle, $aAuthor, $aPages){
@@ -184,10 +185,10 @@
         }
 
         function isSmall(){
-          if ($this->pages <= 400){
+          if($this->pages <= 400){
             echo "This is a small book";
           } else {
-            echo "This is a big book";
+            echo "This is a huge book";
           } 
         }
       }
