@@ -170,7 +170,7 @@
     ?>
 
     <!-- IF condition -->
-    <!-- Advanced escaping using conditions -->
+    <!-- Advanced escaping using conditions: if():, else:, endif; -->
     <?php 
       $expression = true;
       if ($expression):
@@ -179,6 +179,14 @@
     <?php else: ?>
     <p>Otherwise this will show</p>
     <?php endif; ?>
+
+    <!-- Shortness works for looping: -->
+    <?php for($i=0; $i < 5; $i++): ?>
+      <p>Hello, Spain!</p>
+    <?php endfor; ?>
+
+    <!-- Print out without echo -->
+    <?= "My name is Alena" ?>
 
     <!-- Classes and objects -->
     <?php
