@@ -170,6 +170,16 @@
     ?>
 
     <!-- IF condition -->
+    <!-- Advanced escaping using conditions -->
+    <?php 
+      $expression = true;
+      if ($expression):
+    ?>
+    <p>This will show if the expression is true</p>
+    <?php else: ?>
+    <p>Otherwise this will show</p>
+    <?php endif; ?>
+
     <!-- Classes and objects -->
     <?php
       class Book {
@@ -204,7 +214,6 @@
     <!-- with a post method you can't see your inputs in URL line -->
     <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
     
-
     <script src="/bundle.js"></script>
   </body>
 </html>
