@@ -132,10 +132,9 @@
             'k', // value "k" is assigned the key 2. This is because the largest integer key before that was 1
             2 => 'l', // the value "k" will be overwritten by "l"
         );
-
+        // alternative to var_dump() is print_r();
         var_dump($array);
            
-        
         // methods: 
         count($grades); 
 

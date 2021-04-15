@@ -140,9 +140,10 @@ const getArrayOfPositives = (arr) => {
   }
   return newArray;
 };
+
 // Optional function for getArrayOfPositives:
 const getArrayOfPositivesOp = (arr) => {
-  return arr.filter(value => value > 0);
+  return arr.filter(value => value >= 0);
 };
 
 module.exports = {
