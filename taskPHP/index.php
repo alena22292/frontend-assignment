@@ -233,7 +233,11 @@
       $book1 = new Book('Harry Potter', 'JK Rowling', 400);
       $book2 = new Book('Onegin', 'Alexander Pushkin', 700);
     ?>
-
+    <!-- PHP constant -->
+    <?php
+      define("TITLE", "Constant and variables");
+      echo TITLE;
+    ?>
     <!-- To add another HTML files into the file -->
     <?php include "path/to/file" ?>
     <!-- It is possible to include another .php file with names of some variables in it and assigned them in the main file. -->
