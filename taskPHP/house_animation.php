@@ -29,6 +29,7 @@
     div::before {
       content: "";
       padding-top: 100%;
+      /*   grid-column: 1/1   */
       grid-column: 1/1;
       grid-row: 1/1;
     }
@@ -62,7 +63,10 @@
       animation-delay: 0.5s;
     }
     @-webkit-keyframes shrink{
-      to {background: transparent;}
+      /*to {background: transparent;}*/
+      0% {opacity: 0.1;}
+      50% {opacity: 1;}
+      100% {opacity: 0.1;}
     }
   </style>
 </head>
