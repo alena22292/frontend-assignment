@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Redux boilerplate</title>
   </head>
-  <body>  
+  <body>
     <?php
 
     // Function;
@@ -15,10 +15,10 @@
         echo $x;
         $x++;
       }
-      
+
       myTest();
       echo '<br>';
-      
+
       // Concatination sign '.';
       echo "Hello World!"."<p>May I enter here</p>";
 
@@ -27,7 +27,7 @@
       /*
       multyline comments
       */
-      
+
       // Variables
       $name = 'Alena';
       $surname = 'Gr';
@@ -35,7 +35,7 @@
       echo $name . ' ' . $surname;
       echo "Age is $age <br>";
       echo '<br>';
-      
+
       // Variable types:
       $string = 'String';
       $integer = 34;
@@ -46,7 +46,7 @@
       $null = null;
       $array = ['string', 34];
       $object = null;
-      $resource = null; 
+      $resource = null;
 
       echo $array.'<br>';
       echo gettype($resource).'<br>';
@@ -59,12 +59,12 @@
 
       // Useful methods to check up the variable type:
         echo is_string($string);
-        /* 
+        /*
         is_bool();
         is_int();
         is_double;
         */
-        // string methods: 
+        // string methods:
         $myString = "Hello World";
 
         strtolower($myString);
@@ -73,11 +73,11 @@
         // to retrieve the first character of the string:
         $myString[0];
         str_replace("World", "Home", $myString);
-        // substring method takes at least two arguments var string, start position and the third one is optional as you want to retrieve specific number of characters 
+        // substring method takes at least two arguments var string, start position and the third one is optional as you want to retrieve specific number of characters
         substr($myString, 8, 4);
-      
 
-        // num methods: 
+
+        // num methods:
         pow(2, 4);
         sqrt(144);
         abs();
@@ -103,7 +103,7 @@
 
         echo $a++; // print $a => 5; then increased the value $a = 6;
         echo ++$a;  // firstly $a+1 then printed out => 7;
-        
+
         // Run into server:
         // => php -S localhost:4000
         // On the web-page: http://localhost:4000/php-project/index.php
@@ -111,7 +111,7 @@
         // plain html tags: retrieve the input from the form(inside the square brackets puts the value of name):
 
         $_GET["name"];
-        
+
 
         // Associative array (pair of key and values):
         $grades = array("Alena" => "A+", "Next" => "B");
@@ -134,9 +134,9 @@
         );
         // alternative to var_dump() is print_r();
         var_dump($array);
-           
-        // methods: 
-        count($grades); 
+
+        // methods:
+        count($grades);
 
     ?>
     <!-- GET -->
@@ -159,20 +159,20 @@
       <input type="submit">
     </form>
     <!-- Associative array -->
-    
+
     <form action="index.php" method="post">
       Student name: <input type="text" name="student-name">
       <input type="submit">
     </form>
 
-    <?php 
+    <?php
       $grades = array("Jim" => "B", "Lucas" => "D");
       $name = $_POST["student-name"];
 
-       echo "<p>$name has the grade $grades[$name]</p>" 
+       echo "<p>$name has the grade $grades[$name]</p>"
       ?>
     <!-- Functions: -->
-    <?php 
+    <?php
       function sayHello($name) {
         echo "<div>Hello, $name</div>";
       }
@@ -181,7 +181,7 @@
     ?>
 
     <!-- Looping -->
-    <?php 
+    <?php
       $myArray = array("green", "pink", "yellow");
       for($i = 0; $i <= count($myArray); $i++) {
         echo "$myArray[$i] <br>";
@@ -190,7 +190,7 @@
 
     <!-- IF condition -->
     <!-- Advanced escaping using conditions: if():, else:, endif; -->
-    <?php 
+    <?php
       $expression = true;
       if ($expression):
     ?>
@@ -226,7 +226,7 @@
             echo "This is a small book";
           } else {
             echo "This is a huge book";
-          } 
+          }
         }
       }
 
@@ -244,7 +244,7 @@
 
     <!-- with a post method you can't see your inputs in URL line -->
     <p>Hello <?php echo $_GET["name"]?>, your age is <?php echo $_GET["age"]?></p>
-    
+
     <script src="/bundle.js"></script>
   </body>
 </html>
