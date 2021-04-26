@@ -54,7 +54,7 @@
       let id = li.getAttribute('data-id');
       let name = li.getAttribute('data-name');
       let h2 = document.querySelector('h2');
-      h2.textContent = `${id}: ${name}`;
+      h2.textContent = `${id} - ${name}`;
     }
 
     document.addEventListener('DOMContentLoaded', myFunction);
