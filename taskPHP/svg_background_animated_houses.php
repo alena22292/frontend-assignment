@@ -21,6 +21,7 @@
       .cls-3 {
         fill: none;
         stroke: #090;
+        stroke-width: 15px;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
@@ -33,15 +34,15 @@
       opacity: 1;
     }
 
-    .house:nth-of-type(2){
+    .house:nth-of-type(2) {
       animation: shrink 2s linear 1;
       animation-delay: 0.15s;
     }
-    .house:nth-of-type(4){
+    .house:nth-of-type(4) {
       animation: shrink 2s linear 1;
       animation-delay: 0.65s;
     }
-    .house:nth-of-type(5){
+    .house:nth-of-type(5) {
       animation: shrink 2s linear 1;
       animation-delay: 0.85s;
     }
@@ -123,6 +124,8 @@
     </div>
   </section>
   <!-- House btn -->
+
+
 
 </body>
 </html>
