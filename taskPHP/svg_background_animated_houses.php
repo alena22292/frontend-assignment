@@ -25,9 +25,6 @@
         stroke-linejoin: round;
       }
     /*House*/
-    #bg-pic{
-    }
-
     .house {
       opacity: 0.1;
     }
@@ -42,27 +39,27 @@
     }
     .house:nth-of-type(4){
       animation: shrink 2s linear 1;
-      animation-delay: 0.25s;
+      animation-delay: 0.65s;
     }
     .house:nth-of-type(5){
       animation: shrink 2s linear 1;
-      animation-delay: 0.35s;
+      animation-delay: 0.85s;
     }
     .house:nth-of-type(6){
       animation: shrink 2s linear 1;
-      animation-delay: 0.45s;
+      animation-delay: 0.25s;
     }
     .house:nth-of-type(7){
       animation: shrink 2s linear 1;
-      animation-delay: 0.75s;
+      animation-delay: 0.45s;
     }
     .house:nth-of-type(3){
       animation: shrink 2s linear 1;
-      animation-delay: 0.55s;
+      animation-delay: 0.95s;
     }
     .house:nth-of-type(1){
       animation: shrink 2s linear 1;
-      animation-delay: 0.65s;
+      animation-delay: 0.55s;
     }
 
     @-webkit-keyframes shrink{
