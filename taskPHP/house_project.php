@@ -10,7 +10,7 @@
 
       .cls-2 {
         fill: none;
-        stroke: #323232;
+        stroke: transparent;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
@@ -25,6 +25,7 @@
       .house:hover {
         opacity: 0.8;
         stroke-width: 3px;
+        stroke: black;
       }
 
       /*Animation*/
@@ -58,7 +59,7 @@
       }
       .base:nth-of-type(16) .cls-2 {
         animation: shrink 2s linear 1;
-        animation-delay: 0.80s;
+        animation-delay: 0.85s;
       }
       .base:nth-of-type(18) .cls-2 {
         animation: shrink 2s linear 1;
@@ -71,9 +72,7 @@
 
       @keyframes shrink {
         0%  {stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.1)); stroke-opacity: 0.1;}
-        25% {stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.6)); stroke-opacity: 0.6;}
-        50% {stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255)); stroke-opacity:   1;}
-        75% {stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.6)); stroke-opacity: 0.6;}
+        50% {stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255));      stroke-opacity:   1;}
         100%{stroke: #d8e3e7; stroke-width: 5px; filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.1)); stroke-opacity: 0.1;}
         /* After the end animation base-line have to be unactive display:none; */
       }
@@ -201,14 +200,14 @@
       */
 
       // Kill base lines after animation:
-      let myFunction = () => {
-        // Array of elements with .base class
-        let elements = document.getElementsByClassName("base");
-        for (let i = 0; i < elements.length; i ++) {
-          elements[i].style.display = 'none';
-        }
-      }
-      setTimeout(myFunction, 2820);
+      // let myFunction = () => {
+      //   // Array of elements with .base class
+      //   let elements = document.getElementsByClassName("base");
+      //   for (let i = 0; i < elements.length; i ++) {
+      //     elements[i].style.display = 'none';
+      //   }
+      // }
+      // setTimeout(myFunction, 2820);
 
     </script>
 </body>
