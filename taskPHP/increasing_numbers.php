@@ -5,30 +5,42 @@
   <title>Document</title>
 </head>
 <body>
-  <p>My score is +<span id="counter">0</span></p>
+  <p>My score: <span id="counter">0</span></p>
+  <p>Does it work?</p>
 
-  <button onclick="updateCount(30)" class="btn-inc" data-score="30">+30</button>
-  <button onclick="updateCount(70)" class="btn-inc" data-score="70">+70</button>
-  <button onclick="updateCount(50)" class="btn-inc" data-score="50">+50</button>
+  <button onclick="incNbr(30)" class="btn-inc" data-score="30">+30</button>
+  <button onclick="incNbr(70)" class="btn-inc" data-score="70">+70</button>
+  <button onclick="incNbr(50)" class="btn-inc" data-score="50">+50</button>
 
 
   <script>
-    const speed = 2000;
-    const el = document.getElementById('counter');
+    var speed = 10;
 
-    const updateCount = (plus) => {
-      let baseNum = +el.innerText;
-      const inc = plus / speed;
-      console.log(el.innerText);
+    /* Call this function with a string containing the ID name to
+     * the element containing the number you want to do a count animation on.*/
+    function incEltNbr(id, num) {
+      elt = document.getElementById(id);
+      startNbr = Number(document.getElementById(id).innerHTML);
+      console.log(startNbr);
+      incNbrRec(startNbr, num, elt);
+    }
 
-      if (baseNum < (plus + baseNum)) {
-        el.innerText = Math.ceil(baseNum + inc);
-        setTimeout(updateCount, 1);
-      }else{
-        el.innerText = plus + baseNum;
+    /*A recursive function to increase the number.*/
+    function incNbrRec(i, endNbr, elt) {
+      if (i <= endNbr) {
+        elt.innerHTML = i;
+        setTimeout(function() {//Delay a bit before calling the function again.
+          incNbrRec(i + 1, endNbr, elt);
+        }, speed);
       }
     }
 
+    /*Function called on button click*/
+    function incNbr(num){
+      incEltNbr("counter", num);
+    }
+
+    incEltNbr("counter"); /*Call this funtion with the ID-name for that element to increase the number within*/
 
   </script>
 </body>

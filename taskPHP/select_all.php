@@ -5,9 +5,8 @@
        echo "$num: $value <br>";
      }
   }
-
-
 ?>
+
 <!-- in search bar: google jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
