@@ -21,8 +21,8 @@
     function incEltNbr(id, num) {
       elt = document.getElementById(id);
       startNbr = Number(document.getElementById(id).innerHTML);
-      console.log(startNbr);
-      incNbrRec(startNbr, num, elt);
+      progress = num + startNbr;
+      incNbrRec(startNbr, progress, elt);
     }
 
     /*A recursive function to increase the number.*/
