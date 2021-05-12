@@ -7,15 +7,18 @@
 <body>
   <p>My score: <span id="counter">0</span></p>
   <p>Does it work?</p>
-
+  <button onclick="cong()">Yes</button> | <button onclick="tryMore()">No</button>
+  <div id="text"></div>
+  <br>
+  <hr>
+  <br>
   <button onclick="incNbr(30)" class="btn-inc" data-score="30">+30</button>
   <button onclick="incNbr(70)" class="btn-inc" data-score="70">+70</button>
   <button onclick="incNbr(50)" class="btn-inc" data-score="50">+50</button>
 
 
   <script>
-    var speed = 10;
-
+    var speed = 1;
     /* Call this function with a string containing the ID name to
      * the element containing the number you want to do a count animation on.*/
     function incEltNbr(id, num) {
@@ -40,8 +43,19 @@
       incEltNbr("counter", num);
     }
 
-    incEltNbr("counter"); /*Call this funtion with the ID-name for that element to increase the number within*/
+    // incEltNbr("counter"); /*Call this funtion with the ID-name for that element to increase the number within*/
 
+    // Ask a user about feedback:
+
+    function cong(){
+      let el = document.getElementById('text');
+      text.innerHTML = "Congratulations! Today is your day!"
+    }
+    function tryMore(){
+      let el = document.getElementById('text');
+      text.innerHTML = "May you try again..."
+
+    }
   </script>
 </body>
 </html>
