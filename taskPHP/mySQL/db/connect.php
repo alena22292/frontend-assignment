@@ -6,6 +6,8 @@
   DEFINE("DB_NAME", "names");
 
   //  mysql_connect('localhost name', 'username', 'password') must be separated from the other files
-  mysql_connect('localhost', 'root', '');
-  mysql_select_db('DB_name');
+  $db_connection = mysql_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
+  OR die("Could not connect to my SQL " . 
+     mysql_connect_error());
+  // mysql_select_db('DB_name');
  ?>
